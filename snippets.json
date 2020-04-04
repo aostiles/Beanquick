@@ -1,0 +1,8 @@
+{
+	"New Entry": {
+		"prefix": "j",
+		"body": [
+			"${1:month},${2:day},${3:description},${4:amount},${5:account}\n$0"
+		]
+	}
+}
