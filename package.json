@@ -1,5 +1,6 @@
 {
 	"name": "beanquick",
+	"publisher": "aostiles",
 	"displayName": "Beanquick",
 	"description": "Quickly enter expense data for Beancount",
 	"version": "0.0.1",
