@@ -1,65 +1,48 @@
-# bean-quick README
+# Beanquick
 
-This is the README for your extension "bean-quick". After writing up a brief description, we recommend including the following sections.
+A quick way to manually enter Beancount transactions in Visual Studio Code.
 
-## Features
+```
+05,01,gym membership,149.00,Expenses:Fitness:MuayThai
+05,02,grocery outlet,22.99,Expenses:Food:Groceries
+```
+becomes
+```
+2020-05-01 * "gym membership"
+    Expenses:Fitness:MuayThai 149.00 USD
+    Assets:Checking
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+2020-05-02 * "grocery outlet"
+    Expenses:Food:Groceries 22.99 USD
+    Assets:Checking
+```
 
-For example if there is an image subfolder under your extension project workspace:
+Beanquick is useful if you manually enter groups of transactions:
+- belonging to the same year
+- debiting the same account
 
-\!\[feature X\]\(images/feature-x.png\)
+## Installation
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+Beanquick isn't polished enough for me to put it on the VS Code marketplace. Grab
+the latest `vsix` release from this Github repo and run:
+```
+code --install-extension <vsix-file>
+```
 
-## Requirements
+## Usage
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+After installing, set `beanquick.mainBeanFile` to the path of your `main.bean` file.
+Beanquick needs this to suggest expense account names.
 
-## Extension Settings
+Open up a new editor and change the language from plain text to "Beanquick".  
+Pressing `j` will populate a placeholder row. You can cycle forward through fields
+with `Tab` and backwards with `Shift + Tab`:
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+![](img/placeholder.gif)
 
-For example:
+Once you've got some transactions entered, bring up the command palette (`Shift + Command + P` on mac)
+and select "Format to Beancount". Enter an account to be debited and a year.
 
-This extension contributes the following settings:
+![](img/format.gif)
 
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+Copy & paste your transactions into your Beancount file.

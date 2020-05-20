@@ -1,7 +1,7 @@
 {
-	"name": "bean-quick",
-	"displayName": "bean-quick",
-	"description": "quickly enter expense data for beancount",
+	"name": "beanquick",
+	"displayName": "Beanquick",
+	"description": "Quickly enter expense data for Beancount",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.43.0"
@@ -27,7 +27,9 @@
 		"languages": [
 			{
 				"id": "beanquick",
-				"extensions": [".bq"]
+				"extensions": [
+					".bq"
+				]
 			}
 		],
 		"snippets": [
@@ -36,6 +38,15 @@
 				"path": "./snippets.json"
 			}
 		],
+		"configuration": {
+			"title": "Beanquick",
+			"properties": {
+				"beanquick.mainBeanFile": {
+					"type": "string",
+					"description": "The main.bean file from which account definitions will be read for auto-complete."
+				}
+			}
+		},
 		"configurationDefaults": {
 			"[beanquick]": {
 				"editor.renderWhitespace": "all",
@@ -67,5 +78,10 @@
 		"typescript": "^3.7.5",
 		"vscode-test": "^1.3.0"
 	},
-	"extensionDependencies": ["gruntfuggly.align-mode"]
+	"extensionDependencies": [
+		"gruntfuggly.align-mode"
+	],
+	"dependencies": {
+		"csv-parse": "^4.8.8"
+	}
 }
