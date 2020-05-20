@@ -84,5 +84,9 @@
 	],
 	"dependencies": {
 		"csv-parse": "^4.8.8"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/aostiles/Beanquick.git"
 	}
 }
